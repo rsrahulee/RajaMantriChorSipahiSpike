@@ -2,6 +2,7 @@ package com.pack.mainactivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,8 +31,6 @@ public class RajaMantriChorCipahiActivity extends Activity {
 	private String player3_role = "";
 	private String player4_role = "";
 
-//my first commit is here for checking.
-
 	private String player1_name, player2_name, player3_name, player4_name;
 	private String[] playersArray = { "Player1", "Player2", "Player3", "Player4" };
 
@@ -55,10 +54,14 @@ public class RajaMantriChorCipahiActivity extends Activity {
 	private TextView txtPlayer2;
 	private TextView txtPlayer3;
 	private TextView txtPlayer4;
+	
+	private Context context;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.welcome);
+		
+		context = this.getApplicationContext();
 
 		int i = 0;
 		int j = 0;
@@ -71,7 +74,7 @@ public class RajaMantriChorCipahiActivity extends Activity {
 			public void onClick(View v) {
 				setContentView(R.layout.help);
 				// Create the adView
-				AdView adView = new AdView(RajaMantriChorCipahiActivity.this, AdSize.BANNER, "a14e156523d01de");
+				AdView adView = new AdView(context, AdSize.BANNER, "a14e156523d01de");
 				// Lookup your LinearLayout assuming it’s been given
 				// the attribute android:id="@+id/mainLayout"
 				LinearLayout layout = (LinearLayout) findViewById(R.id.mainLayoutHelp);
@@ -85,8 +88,8 @@ public class RajaMantriChorCipahiActivity extends Activity {
 				Button btnBack = (Button) findViewById(R.id.btnMainMenuHelp);
 				btnBack.setOnClickListener(new OnClickListener() {
 					public void onClick(View v) {
-						Intent i = new Intent(RajaMantriChorCipahiActivity.this, RajaMantriChorCipahiActivity.class);
-						RajaMantriChorCipahiActivity.this.startActivity(i);
+						Intent i = new Intent(context, RajaMantriChorCipahiActivity.class);
+						context.startActivity(i);
 						finish();
 					}
 				});
@@ -98,7 +101,7 @@ public class RajaMantriChorCipahiActivity extends Activity {
 				// TODO Auto-generated method stub
 				setContentView(R.layout.rmcsp);
 				// Create the adView
-				AdView adView = new AdView(RajaMantriChorCipahiActivity.this, AdSize.BANNER, "a14e156523d01de");
+				AdView adView = new AdView(context, AdSize.BANNER, "a14e156523d01de");
 				// Lookup your LinearLayout assuming it’s been given
 				// the attribute android:id="@+id/mainLayout"
 				LinearLayout layout = (LinearLayout) findViewById(R.id.mainLayoutPlayer);
@@ -134,8 +137,8 @@ public class RajaMantriChorCipahiActivity extends Activity {
 				btnMainMenu = (Button) findViewById(R.id.btnMainMenu);
 				btnMainMenu.setOnClickListener(new OnClickListener() {
 					public void onClick(View v) {
-						Intent i = new Intent(RajaMantriChorCipahiActivity.this, RajaMantriChorCipahiActivity.class);
-						RajaMantriChorCipahiActivity.this.startActivity(i);
+						Intent i = new Intent(context, RajaMantriChorCipahiActivity.class);
+						context.startActivity(i);
 						finish();
 					}
 				});
@@ -164,7 +167,7 @@ public class RajaMantriChorCipahiActivity extends Activity {
 
 							setContentView(R.layout.rmcsgnew);
 							// Create the adView
-							AdView adView = new AdView(RajaMantriChorCipahiActivity.this, AdSize.BANNER,
+							AdView adView = new AdView(context, AdSize.BANNER,
 									"a14e156523d01de");
 							// Lookup your LinearLayout assuming it’s been
 							// given
