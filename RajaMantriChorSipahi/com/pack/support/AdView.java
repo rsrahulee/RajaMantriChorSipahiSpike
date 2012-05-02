@@ -1,13 +1,12 @@
 package com.pack.support;
 
+import android.content.Context;
 import android.view.View;
-
-import com.pack.mainactivity.RajaMantriChorCipahiActivity;
 
 public class AdView extends View{
 
-	public AdView(RajaMantriChorCipahiActivity rajaMantriChorCipahiActivity, String banner, String string) {
-		super(rajaMantriChorCipahiActivity);
+	public AdView(Context context, String banner, String string) {
+		super(context);
 	}
 
 	public void loadAd(AdRequest adRequest) {
